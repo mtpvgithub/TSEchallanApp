@@ -1,0 +1,44 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--navigation activity theme-->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--violations activity theme-->
+    <style name="ViolationsTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="headers_text_style">
+        <item name="android:textSize">@dimen/headers_text_size</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_view_style">
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/text_view_size</item>
+    </style>
+
+    <style name="dashboard_text_view_style">
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/text_view_size</item>
+    </style>
+
+    <style name="edit_text_style">
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/edit_text_size</item>
+    </style>
+
+</resources>

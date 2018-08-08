@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_header_height"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/header_image"
+            android:layout_width="@dimen/login_header_img_weight"
+            android:layout_height="@dimen/login_header_img_height"
+            android:layout_marginTop="@dimen/login_header_img_margin_top"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_ts_police" />
+
+        <TextView
+            android:id="@+id/tv_app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/login_app_name_margin_top"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/login_header_app_name_tv_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_app_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/login_app_version_margin_top"
+            android:text="@string/app_version"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_cardview_margin_top"
+        android:layout_marginLeft="@dimen/login_cardview_margin_left"
+        android:layout_marginStart="@dimen/login_cardview_margin_left"
+        android:layout_marginRight="@dimen/login_cardview_margin_right"
+        android:layout_marginEnd="@dimen/login_cardview_margin_right"
+        android:foreground="?android:attr/selectableItemBackground"
+        card_view:cardCornerRadius="@dimen/login_cardview_corner_radius">
+
+        <LinearLayout
+            android:id="@+id/layout_spot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/login_cardview_lyt_padding_left"
+            android:paddingStart="@dimen/login_cardview_lyt_padding_left"
+            android:paddingRight="@dimen/login_cardview_lyt_padding_right"
+            android:paddingEnd="@dimen/login_cardview_lyt_padding_right">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/headers_text_style"
+                android:layout_marginTop="24dp"
+                android:text="@string/login"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp">
+
+                <EditText
+                    android:id="@+id/et_pid_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/pid_user_name"
+                    android:inputType="number"
+                    android:maxLines="1" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="76dp">
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:maxLines="1" />
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="610dp"
+        android:background="@drawable/login_btn_style"
+        android:text="@string/login"
+        android:layout_marginLeft="144dp"
+        android:layout_marginRight="144dp"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="@string/footer_text"
+        android:textColor="#ffffff"
+        android:textStyle="italic" />
+
+</RelativeLayout>

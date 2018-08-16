@@ -39,15 +39,16 @@
     <dimen name="dashboard_hrz_lyt_padding_left">12dp</dimen>
     <dimen name="dashboard_hrz_lyt_padding_right">12dp</dimen>
 
-
     <dimen name="dashboard_card_view1_margin">12dp</dimen>
     <dimen name="dashboard_card_view1_corner_radius">5dp</dimen>
     <dimen name="dashboard_card_view1_img_view_padding">24dp</dimen>
     <dimen name="dashboard_card_view1_img_view_height">144dp</dimen>
     <dimen name="dashboard_card_view1_text_view_padding">12dp</dimen>
-    <dimen name="dashboard_card_view1_text_view_size">16sp</dimen>
+    <dimen name="dashboard_card_view1_text_view_size">18sp</dimen>
 
     <dimen name="headers_text_size">24sp</dimen>
+    <dimen name="footer_text_size">18sp</dimen>
+    <dimen name="footer_padding">15sp</dimen>
     <dimen name="text_view_size">16sp</dimen>
     <dimen name="dashboard_text_view_size">16sp</dimen>
     <dimen name="edit_text_size">16sp</dimen>

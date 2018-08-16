@@ -19,97 +19,101 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/ll_btns"
-        android:layout_below="@id/appbar"
-        android:padding="16dp">
+        android:layout_below="@+id/appbar"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/tv_challan_generation"
+            style="@style/header_text_view_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Generate Case:" />
 
         <LinearLayout
             android:id="@+id/ll_veh_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_challan_generation"
+            android:layout_marginTop="12dp"
             android:orientation="horizontal"
             android:weightSum="1">
 
             <Spinner
                 android:id="@+id/spinner_regnNo_chssNo_engnNo"
+                style="@style/spinner_style"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.7" />
 
-            <android.support.design.widget.TextInputLayout
+            <!--<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/text_view_style"
+                android:layout_weight="0.25"
+                android:gravity="center|center_vertical"
+                android:text=":" />-->
+
+            <EditText
+                android:id="@+id/et_veh_no"
+                style="@style/edit_text_style"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="2dp"
-                android:layout_marginStart="2dp"
-                android:layout_weight="0.3">
-
-                <EditText
-                    android:id="@+id/et_regn_no"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/vehicle_no"
-                    android:inputType="textCapCharacters"
-                    android:maxLines="1" />
-
-            </android.support.design.widget.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_weight="0.3"
+                android:hint="Vehicle Registration No."
+                android:inputType="textCapCharacters"
+                android:maxLength="11" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_dl_no"
+            android:id="@+id/ll_lic_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_veh_no"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal"
             android:weightSum="1">
 
-            <android.support.design.widget.TextInputLayout
+            <EditText
+                style="@style/edit_text_style"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.3">
-
-                <EditText
-                    android:id="@+id/et_dl_no"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/driving_license_no"
-                    android:inputType="textCapCharacters"
-                    android:maxLines="1" />
-
-            </android.support.design.widget.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:hint="Driving License No."
+                android:inputType="textCapCharacters"
+                android:maxLength="20" />
 
             <Button
                 android:id="@+id/btn_dob"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="2dp"
-                android:layout_marginStart="2dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_weight="0.7"
                 android:background="@color/contact_number"
+                android:drawableEnd="@drawable/ic_calender_24x24"
+                android:drawableRight="@drawable/ic_calender_24x24"
+                android:paddingEnd="8dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="8dp"
+                android:paddingStart="0dp"
                 android:text="@string/date_of_birth"
                 android:textColor="#000000"
                 android:visibility="visible" />
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/headers_text_style"
-            android:id="@+id/tv_rc_header"
-            android:layout_below="@id/ll_dl_no"
-            android:layout_marginTop="12dp"
-            android:text="Vehicle Details"/>
-
         <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/rc_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_rc_header"
-            android:layout_marginTop="0dp"
+            android:layout_below="@id/ll_lic_no"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
+            android:layout_marginTop="8dp"
             android:foreground="?android:attr/selectableItemBackground"
             card_view:cardBackgroundColor="@color/cardview_light_background"
             card_view:cardCornerRadius="10dp">
@@ -117,12 +121,12 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="16dp">
+                android:padding="12dp">
 
                 <RelativeLayout
+                    android:id="@+id/rc_rel_header"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/rc_rel_header">
+                    android:layout_height="wrap_content">
 
                     <ImageView
                         android:id="@+id/img_emblem"
@@ -150,21 +154,21 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/rc_rel_regn_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/rc_rel_regn_no"
                     android:layout_below="@id/rc_rel_header"
-                    android:layout_marginTop="12dp"
                     android:layout_marginLeft="48dp"
-                    android:layout_marginRight="48dp">
+                    android:layout_marginRight="48dp"
+                    android:layout_marginTop="12dp">
 
                     <TextView
                         android:id="@+id/rc_tv_regn_no_label"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:text="Regn. Number"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
-                        android:textColor="@android:color/black"/>
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                     <TextView
                         android:id="@+id/rc_tv_colon_regn"
@@ -173,8 +177,8 @@
                         android:layout_toEndOf="@id/rc_tv_regn_no_label"
                         android:layout_toRightOf="@id/rc_tv_regn_no_label"
                         android:text=":"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
-                        android:textColor="@android:color/black"/>
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                     <TextView
                         android:id="@+id/rc_tv_regn_no"
@@ -183,66 +187,66 @@
                         android:layout_toEndOf="@id/rc_tv_colon_regn"
                         android:layout_toRightOf="@id/rc_tv_colon_regn"
                         android:text="TS08EG9748"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
-                        android:textColor="@color/colorBrown"/>
+                        android:textColor="@color/colorBrown"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/rc_rel_owner_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/rc_rel_owner_name"
                     android:layout_below="@id/rc_rel_regn_no"
-                    android:layout_marginTop="4dp"
                     android:layout_marginLeft="48dp"
-                    android:layout_marginRight="48dp">
+                    android:layout_marginRight="48dp"
+                    android:layout_marginTop="4dp">
 
                     <TextView
                         android:id="@+id/rc_tv_owner_name_label"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:text="Regd. Owner"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
-                        android:textColor="@android:color/black"/>
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                     <TextView
                         android:id="@+id/rc_tv_colon_owner_name"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:text=":"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
-                        android:textColor="@android:color/black"
                         android:layout_toEndOf="@id/rc_tv_owner_name_label"
-                        android:layout_toRightOf="@id/rc_tv_owner_name_label"/>
+                        android:layout_toRightOf="@id/rc_tv_owner_name_label"
+                        android:text=":"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                     <TextView
                         android:id="@+id/rc_tv_owner_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="PERALA SUNIL KUMAR, P LINGAIAH"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
-                        android:textColor="@android:color/black"
                         android:layout_toEndOf="@id/rc_tv_colon_owner_name"
-                        android:layout_toRightOf="@id/rc_tv_colon_owner_name"/>
+                        android:layout_toRightOf="@id/rc_tv_colon_owner_name"
+                        android:text="PERALA SUNIL KUMAR, P LINGAIAH"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/rc_rel_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/rc_rel_address"
                     android:layout_below="@id/rc_rel_owner_name"
-                    android:layout_marginTop="4dp"
                     android:layout_marginLeft="48dp"
-                    android:layout_marginRight="48dp">
+                    android:layout_marginRight="48dp"
+                    android:layout_marginTop="4dp">
 
                     <TextView
                         android:id="@+id/rc_tv_address_label"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
+                        android:text="Address"
                         android:textColor="@android:color/black"
-                        android:text="Address"/>
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                     <TextView
                         android:id="@+id/rc_tv_colon_address"
@@ -250,9 +254,9 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/rc_tv_address_label"
                         android:layout_toRightOf="@id/rc_tv_address_label"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
+                        android:text=":"
                         android:textColor="@android:color/black"
-                        android:text=":" />
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                     <TextView
                         android:id="@+id/rc_tv_address"
@@ -260,38 +264,38 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/rc_tv_colon_address"
                         android:layout_toRightOf="@id/rc_tv_colon_address"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
+                        android:text="FLAT NO-104, SAIGARDENS, SAI KRISHNA ENCLAVE, SP NAGAR, MOULA ALI, HYD"
                         android:textColor="@android:color/black"
-                        android:text="FLAT NO-104, SAIGARDENS, SAI KRISHNA ENCLAVE, SP NAGAR, MOULA ALI, HYD" />
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/rc_rel_veh_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/rc_rel_veh_type"
                     android:layout_below="@id/rc_rel_address"
-                    android:layout_marginTop="4dp"
                     android:layout_marginLeft="48dp"
-                    android:layout_marginRight="48dp">
+                    android:layout_marginRight="48dp"
+                    android:layout_marginTop="4dp">
 
                     <TextView
                         android:id="@+id/rc_tv_veh_type_label"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
+                        android:text="Vehicle Type"
                         android:textColor="@android:color/black"
-                        android:text="Vehicle Type"/>
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                     <TextView
                         android:id="@+id/rc_tv_colon_veh_type"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
-                        android:textColor="@android:color/black"
                         android:layout_toEndOf="@id/rc_tv_veh_type_label"
                         android:layout_toRightOf="@id/rc_tv_veh_type_label"
-                        android:text=":" />
+                        android:text=":"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                     <TextView
                         android:id="@+id/rc_tv_veh_type"
@@ -299,28 +303,28 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/rc_tv_colon_veh_type"
                         android:layout_toRightOf="@id/rc_tv_colon_veh_type"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
+                        android:text="HERO MOTOCORP LTD."
                         android:textColor="@android:color/black"
-                        android:text="HERO MOTOCORP LTD." />
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/rc_rel_chassis_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/rc_rel_chassis_no"
                     android:layout_below="@id/rc_rel_veh_type"
-                    android:layout_marginTop="4dp"
                     android:layout_marginLeft="48dp"
-                    android:layout_marginRight="48dp">
+                    android:layout_marginRight="48dp"
+                    android:layout_marginTop="4dp">
 
                     <TextView
                         android:id="@+id/rc_tv_chassis_no_label"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
+                        android:text="Chassis No."
                         android:textColor="@android:color/black"
-                        android:text="Chassis No."/>
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                     <TextView
                         android:id="@+id/rc_tv_colon_chassis_no"
@@ -328,58 +332,58 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/rc_tv_chassis_no_label"
                         android:layout_toRightOf="@id/rc_tv_chassis_no_label"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
+                        android:text=":"
                         android:textColor="@android:color/black"
-                        android:text=":" />
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                     <TextView
                         android:id="@+id/rc_tv_chassis_no"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
-                        android:textColor="@android:color/black"
                         android:layout_toEndOf="@id/rc_tv_colon_chassis_no"
                         android:layout_toRightOf="@id/rc_tv_colon_chassis_no"
-                        android:text="MBLJA06AMFGB25098" />
+                        android:text="MBLJA06AMFGB25098"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/rc_rel_engine_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/rc_rel_engine_no"
                     android:layout_below="@id/rc_rel_chassis_no"
-                    android:layout_marginTop="4dp"
                     android:layout_marginLeft="48dp"
-                    android:layout_marginRight="48dp">
+                    android:layout_marginRight="48dp"
+                    android:layout_marginTop="4dp">
 
                     <TextView
                         android:id="@+id/rc_tv_engine_no_label"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
+                        android:text="Engine No."
                         android:textColor="@android:color/black"
-                        android:text="Engine No."/>
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                     <TextView
                         android:id="@+id/rc_tv_colon_engine_no"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
-                        android:textColor="@android:color/black"
                         android:layout_toEndOf="@id/rc_tv_engine_no_label"
                         android:layout_toRightOf="@id/rc_tv_engine_no_label"
-                        android:text=":" />
+                        android:text=":"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                     <TextView
                         android:id="@+id/rc_tv_engine_no"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/dashboard_card_view1_text_view_size"
-                        android:textColor="@android:color/black"
                         android:layout_toEndOf="@id/rc_tv_colon_engine_no"
                         android:layout_toRightOf="@id/rc_tv_colon_engine_no"
-                        android:text="JA06EJFGB04280" />
+                        android:text="JA06EJFGB04280"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
 
                 </RelativeLayout>
 
@@ -388,23 +392,118 @@
         </android.support.v7.widget.CardView>
 
         <TextView
+            android:id="@+id/tv_pending_challans_header"
+            style="@style/header_text_view_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/headers_text_style"
-            android:id="@+id/tv_driver_details"
+            android:layout_below="@+id/rc_card"
+            android:layout_marginTop="12dp"
+            android:text="Pending Challans:"
+            android:textSize="@dimen/text_view_size"
+            android:visibility="gone" />
+
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_pending_challans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/rc_card"
-            android:layout_marginTop="12dp"
-            android:text="Driver Details"/>
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="8dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            card_view:cardBackgroundColor="@color/cardview_light_background"
+            card_view:cardCornerRadius="10dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/ll_driver_details"
-            android:layout_below="@+id/tv_driver_details"
-            android:layout_marginTop="12dp"
-            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp">
 
-        </LinearLayout>
+                <RelativeLayout
+                    android:id="@+id/rel_pending_challans"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_pending_challans_label"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Pending Challans"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
+
+                    <TextView
+                        android:id="@+id/tv_pending_challans_colon"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/tv_pending_challans_label"
+                        android:layout_toRightOf="@id/tv_pending_challans_label"
+                        android:text=":"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
+
+                    <TextView
+                        android:id="@+id/tv_pending_challans"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/tv_pending_challans_colon"
+                        android:layout_toRightOf="@id/tv_pending_challans_colon"
+                        android:text="10"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_pending_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rel_pending_challans"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:id="@+id/tv_pending_amount_label"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Pending Amount"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
+
+                    <TextView
+                        android:id="@+id/tv_pending_amount_colon"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/tv_pending_amount_label"
+                        android:layout_toRightOf="@id/tv_pending_amount_label"
+                        android:text=":"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
+
+                    <TextView
+                        android:id="@+id/tv_pending_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/tv_pending_amount_colon"
+                        android:layout_toRightOf="@id/tv_pending_amount_colon"
+                        android:text="2566.00"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/dashboard_card_view1_text_view_size" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/header_image_right"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@null"
+                    android:src="@drawable/right_arrow2" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
 
     </RelativeLayout>
 
@@ -420,7 +519,7 @@
             android:id="@+id/btn_cancel"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="2dp"
             android:layout_marginRight="2dp"
             android:layout_weight="1"
@@ -432,7 +531,7 @@
             android:id="@+id/btn_next"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
             android:layout_marginStart="2dp"
             android:layout_weight="1"
@@ -444,14 +543,9 @@
 
     <TextView
         android:id="@+id/footer"
+        style="@style/footer_text_style"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:padding="15dp"
-        android:text="@string/footer_text"
-        android:textColor="#ffffff"
-        android:textStyle="italic" />
+        android:layout_height="wrap_content" />
+
 
 </RelativeLayout>

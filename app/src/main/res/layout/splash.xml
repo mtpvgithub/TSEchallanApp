@@ -31,7 +31,7 @@
             android:src="@drawable/ic_ts_police" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/tv_ttp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -42,6 +42,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tv_app_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -54,15 +55,9 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:padding="15dp"
-        android:text="@string/footer_text"
-        android:textColor="#ffffff"
-        android:textStyle="italic" />
+        style="@style/footer_text_style"
+        android:id="@+id/footer"/>
 
 </RelativeLayout>

@@ -8,6 +8,7 @@
     <color name="colorPrimary">#FF347493</color>
     <color name="colorPrimaryLight">#FF3C85A9</color>
     <color name="colorPrimaryTooLight">#FF4597BF</color>
+    <color name="colorPrimaryMuchLight">#77c7ed</color>
     <color name="colorLight">#e2f6ff</color>
     <!--<color name="colorAccent">#ea3732</color>-->
     <color name="colorAccent">#E5322D</color>
@@ -20,4 +21,6 @@
     <color name="colorBrown">#B40404</color>
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#ffffff</color>
+    <color name="colorEnd">#e2f6ff</color>
+    <color name="colorCentre">#FFEEF9FD</color>
 </resources>

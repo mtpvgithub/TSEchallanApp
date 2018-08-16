@@ -1,5 +1,4 @@
 <resources>
-
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
@@ -26,9 +25,25 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="footer_text_style">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:textSize">@dimen/footer_text_size</item>
+        <item name="android:text">@string/footer_text</item>
+        <item name="android:padding">@dimen/footer_padding</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
     <style name="text_view_style">
-        <item name="android:singleLine">true</item>
         <item name="android:textSize">@dimen/text_view_size</item>
+    </style>
+
+    <style name="header_text_view_style">
+        <item name="android:textSize">@dimen/footer_text_size</item>
+        <item name="android:background">@drawable/header_text_style</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorWhite</item>
     </style>
 
     <style name="dashboard_text_view_style">
@@ -37,8 +52,38 @@
     </style>
 
     <style name="edit_text_style">
+        <item name="android:background">@drawable/edit_text_style</item>
+        <item name="android:textColor">@color/colorBlack</item>
         <item name="android:singleLine">true</item>
-        <item name="android:textSize">@dimen/edit_text_size</item>
+        <item name="android:gravity">start</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:paddingLeft">12dp</item>
+    </style>
+
+    <style name="spinner_style">
+        <item name="android:background">@drawable/spinner_style</item>
+        <item name="android:drawableRight">@drawable/down_arrow</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textSize">@dimen/text_view_size</item>
+    </style>
+
+    <style name="dob_btn_style">
+        <item name="android:background">@drawable/spinner_style</item>
+        <item name="android:drawableRight">@drawable/ic_calender_18x18</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/text_view_size</item>
     </style>
 
 </resources>
